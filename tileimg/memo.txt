@@ -1,0 +1,6 @@
+画像の凡例は地理院地図のものから作成しています
+https://maps.gsi.go.jp/#5/36.102376/140.075684/&vs=c1j0h0k0l0u0t0z0r0s0m0f1
+
+newLoading.gif の 地球のローディング画像は
+https://www.behance.net/gallery/13765711/GIF-Preloaders-(Free-Download)
+を使用しています
