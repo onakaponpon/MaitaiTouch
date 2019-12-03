@@ -1,9 +1,10 @@
 # MaitaiTouch
 まいたいタッチのスクリプトです
 
-https://youtu.be/hyziH3SB_QY
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hyziH3SB_QY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://youtu.be/hyziH3SB_QY  
+(説明用動画)
 
+---------------
 Raspberry Piで動作するように開発しましたが、WindowsでもMacでも動作します。
 詳しい説明は http://okosama.org/ture/maitaitouch-html を御覧ください。
 
