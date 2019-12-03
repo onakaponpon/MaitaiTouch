@@ -17,3 +17,7 @@ MITライセンスのスクリプトやプラグインを多数使用してい�
 - QRコード生成のスクリプト jquery.qrcode.min.js は https://github.com/jeromeetienne/jquery-qrcode からダウンロードしたものをそのまま使用しています
 - メッセージボックス表示のスクリプト leaflet-messagebox.js とcssは https://github.com/tinuzz/leaflet-messagebox を使用しています
 - 画面に線を描くスクリプトは https://mam-mam.net/mytech/show.php?cd=160 を使用しています。
+
+-----------
+「重ねるハザードマップ」以外のハザードマップ表示例として、東京都江東区がサイトで公開している大雨浸水ハザードマップを画像に変換したものを用いています。
+https://www.city.koto.lg.jp/470601/machizukuri/kasenkoen/kasen/13389.html
