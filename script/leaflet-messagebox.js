@@ -1,4 +1,5 @@
 //this script is from https://github.com/tinuzz/leaflet-messagebox
+// Copyright (c) 2015, Martijn Grendelman All rights reserved.
 L.Control.Messagebox = L.Control.extend({
     options: {
         position: 'topright',
