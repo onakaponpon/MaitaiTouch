@@ -1,7 +1,8 @@
 # MaitaiTouch
 まいたいタッチのスクリプトです
 
-[![](https://img.youtube.com/vi/hyziH3SB_QY&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=hyziH3SB_QY&feature=youtu.be)
+[![まいたいタッチ](http://img.youtube.com/vi/hyziH3SB_QY/0.jpg)](http://www.youtube.com/watch?v=hyziH3SB_QY "まいたいタッチ")
+
 
 ---------------
 Raspberry Piで動作するように開発しましたが、WindowsでもMacでも動作します。
