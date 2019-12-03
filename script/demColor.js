@@ -1,3 +1,6 @@
+// this script is inspired from
+// https://github.com/frogcat/leaflet-gsi-contour
+
 //高度表示用のレイヤー
 var ContourLayer = L.GridLayer.extend({
   initialize: function(url, options) {
@@ -18,13 +21,6 @@ var ContourLayer = L.GridLayer.extend({
       ctx.drawImage(loadingImg, 0, 0);
       if (done) done(null, tile);
     }
-    // if (_highestDem == -100) {
-    //   //標高が出ていない時の処理
-    //   console.log("このままだとまずいので再計算")
-    //   //showShortDialog("<center>計算中</center>", "ちょっとだけお待ち下さい<br />がんばって計算しています<br />もう一度ボタンを押してみてください", 2000);
-    //   whereIsThisMap();
-    //   //return tile;
-    // }
 
     tile.width = size.x;
     tile.height = size.y;
@@ -40,18 +36,18 @@ var ContourLayer = L.GridLayer.extend({
 
     //whereIsThisMap();
     //以下、最高点と最低点があった上での描画ルーチン
-    //もしもすでにデータベースでブラックリストにタイルがあれば読み込まない。
+    //もしもすでにデータベースで404にタイルがあれば読み込まない。
     var getKey = String(coords.z) + "/" + String(coords.x) + "/" + String(coords.y);
     //データベースに問い合わせ
     var checkThisTileDem = localStorage.getItem(getKey);
-    //結果がブラックリストなら読み込み処理を行わない。
+    //結果が404なら読み込み処理を行わない。
     if (checkThisTileDem) {
       var obj = JSON.parse(checkThisTileDem);
       returnHigh = obj['h'];
       //console.log("h=" + returnHigh + "という記録があったので利用" + getKey);
       if (returnHigh == -100) {
-        //さらにブラックリストだったので、空っぽのタイルを返す
-        console.log(getKey + "はブラックリストだったのでエラーの画像を返す");
+        //さらに404だったので、空っぽのタイルを返す
+        console.log(getKey + "は404だったのでエラーの画像を返す");
         var imgPic = new Image();
         imgPic.src = "./tileimg/notile.png";
         imgPic.onload = function() {
@@ -62,7 +58,7 @@ var ContourLayer = L.GridLayer.extend({
         //return tile; //ここでfunction関数終了
       }
     }
-    //ブラックリストにのっていなければ読み込み処理
+    //404にのっていなければ読み込み処理
     var xhr2 = new XMLHttpRequest(); //xhrへのリクエスト
     //ここより標高の取得
     xhr2.onload = function() {
@@ -350,19 +346,19 @@ function searchHighDemAndXY(tilex, tiley, zoom, startx, starty, endx, endy) {
     var url = "https://cyberjapandata.gsi.go.jp/xyz/dem5a/" + String(zoom) + "/" + String(tilex) + "/" + String(tiley) + ".txt";
   }
 
-  //データベースを確認してブラックリストのチェック
+  //データベースを確認して404のチェック
   var keyString = String(zoom) + "/" + String(tilex) + "/" + String(tiley);
   var checkThisTileDem = localStorage.getItem(keyString);
 
   if (checkThisTileDem) {
     //記録があった場合
     //console.log("データベースに記録あり" + keyString);
-    //ブラックリストかどうかチェック
+    //404かどうかチェック
     var obj = JSON.parse(checkThisTileDem);
     returnHigh = obj['h'];
     if (returnHigh == -100) {
-      //ブラックリストに載っている
-      //console.log("hが-100でブラックリストに載っていた");
+      //404に載っている
+      //console.log("hが-100で404に載っていた");
       return [0, 0];
     } else if (startx == 0 && starty == 0 && endx == 0 && endy == 0) {
       //タイルの範囲全部の問い合わせの場合、
