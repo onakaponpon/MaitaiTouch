@@ -9,7 +9,7 @@ Raspberry Piで動作するように開発しましたが、WindowsでもMacで�
 詳しい説明は http://okosama.org/ture/maitaitouch-html を御覧ください。
 
 ---------------
-MITライセンスのスクリプトやプラグインを多数使用しています。
+MITライセンス、BSDライセンスのスクリプトやプラグインを複数使用しています。
 引用元は、それぞれのファイルの冒頭に記載しています。
 
 - 相対標高図のスクリプト demColor.jsは https://github.com/frogcat/leaflet-gsi-contour を参考にしています
