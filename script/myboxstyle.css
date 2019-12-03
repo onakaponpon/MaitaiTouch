@@ -1,0 +1,12 @@
+p {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+}
+p.infobox {
+  top: 10px;
+  left: 200px;
+  z-index: 1000;
+  background: #AABBCC;
+  opacity: 1;
+}
